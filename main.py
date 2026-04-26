@@ -7,7 +7,7 @@ import argparse
 def parse_args():
     parser = argparse.ArgumentParser(description="Object detection")
     parser.add_argument("--model", type=str,
-                        choices=['cascade', 'yolov8', 'yolov11', 'watershed', 'ssd'],
+                        choices=['cascade', 'yolov8', 'yolov11','yolov26', 'watershed', 'ssd'],
                         default='cascade', help="Model type")
     parser.add_argument("--filepath", type=str)
     return parser.parse_args()
@@ -18,6 +18,12 @@ def main():
         my_classifier = Classifier(args.filepath)
         my_classifier.plot()
     elif args.model == 'yolov11':
+        my_detector = Detector(args.filepath)
+        my_detector.forward()
+    elif args.model == 'yolov8':
+        my_detector = Detector(args.filepath)
+        my_detector.forward()
+    elif args.model == 'yolov26':
         my_detector = Detector(args.filepath)
         my_detector.forward()
     elif args.model == 'watershed':

@@ -4,7 +4,7 @@ from ultralytics import solutions
 class Detector():
     def __init__(self, filepath):
         self.filepath = filepath
-        self.model_path = "models/yolo11n.pt"
+        self.model_path = "models/yolov8n.pt"
 
     def forward(self):
         cap = cv.VideoCapture(self.filepath)
