@@ -1,0 +1,15 @@
+# Python environment
+venv311/
+__pycache__/
+*.pyc
+
+# Django Database
+db.sqlite3
+
+# Media and Videos
+media/
+*.mp4
+*.avi
+
+# YOLO Weights
+*.pt
